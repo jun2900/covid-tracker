@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { CardsGlobal, CardsCountry, CountryPicker } from './components'
+import styles from './App.module.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    state = {
+        data: {
+
+        }
+    }
+
+    async componentDidMount() {
+        const response = await fetch("https://covid19.mathdro.id/api")
+        const data = await response.json()
+        const { confirmed, recovered, deaths, lastUpdate } = await data
+        this.setState({
+            data: {
+                confirmed: await confirmed,
+                recovered: await recovered,
+                death: await deaths,
+                lastUpdate: await lastUpdate,
+            }
+        })
+        console.log(this.state.data);
+
+    }
+
+
+    render() {
+        return (
+            <div className={styles.container}>
+                <CardsGlobal />
+                <CardsCountry />
+                <CountryPicker />
+            </div>
+        )
+    }
 }
 
-export default App;
+export default App
