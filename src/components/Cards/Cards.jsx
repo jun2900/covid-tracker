@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, CardTitle, CardText, Row, Col } from "reactstrap";
-import styles from "./CardsGlobal.module.css";
+import styles from "./Cards.module.css";
 
-const CardsGlobal = ({ data: { confirmed, recovered, deaths }, country }) => {
+const Cards = ({ data: { confirmed, recovered, deaths }, country }) => {
   if (!confirmed) {
     return "";
   }
@@ -10,7 +10,7 @@ const CardsGlobal = ({ data: { confirmed, recovered, deaths }, country }) => {
   return (
     <div className={styles.container}>
       <br />
-      <h1>{country ? `Negara: ${country}` : `Global`}</h1>
+      <h2>{country ? `Negara: ${country}` : `Global`}</h2>
       <Row>
         <Col sm="4">
           <Card body>
@@ -35,4 +35,4 @@ const CardsGlobal = ({ data: { confirmed, recovered, deaths }, country }) => {
   );
 };
 
-export default CardsGlobal;
+export default Cards;
