@@ -10,7 +10,7 @@ const CardsGlobal = ({ data: { confirmed, recovered, deaths }, country }) => {
   return (
     <div className={styles.container}>
       <br />
-      <h1>{country ? `${country}` : `Global`}</h1>
+      <h1>{country ? `Negara: ${country}` : `Global`}</h1>
       <Row>
         <Col sm="4">
           <Card body>
