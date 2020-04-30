@@ -14,27 +14,50 @@ const Cards = ({ data: { confirmed, recovered, deaths }, country }) => {
       <h2>{country ? `Negara: ${country}` : `Global`}</h2>
       <Row>
         <Col sm="4">
-          <Card body className="text-center">
+          <Card
+            body
+            className="text-center"
+            inverse
+            style={{ borderRadius: 25, backgroundColor: "#ffa500" }}
+          >
             <CardTitle>
               <h5>Positif</h5>
             </CardTitle>
-            <CardText>{confirmed.value}</CardText>
+            <CardText>
+              <h5>{confirmed.value}</h5>
+            </CardText>
           </Card>
         </Col>
         <Col sm="4">
-          <Card body className="text-center">
+          <Card
+            body
+            className="text-center"
+            inverse
+            color="danger"
+            style={{ borderRadius: 25 }}
+          >
             <CardTitle>
               <h5>Meninggal</h5>
             </CardTitle>
-            <CardText>{deaths.value}</CardText>
+            <CardText>
+              <h5>{deaths.value}</h5>
+            </CardText>
           </Card>
         </Col>
         <Col sm="4">
-          <Card body className="text-center">
+          <Card
+            body
+            className="text-center"
+            inverse
+            color="success"
+            style={{ borderRadius: 25 }}
+          >
             <CardTitle>
               <h5>Sembuh</h5>
             </CardTitle>
-            <CardText>{recovered.value}</CardText>
+            <CardText>
+              <h5>{recovered.value}</h5>
+            </CardText>
           </Card>
         </Col>
       </Row>

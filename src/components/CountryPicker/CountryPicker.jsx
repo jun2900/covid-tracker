@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchCountries } from "../../api";
 import { Form, Label } from "reactstrap";
+import styles from "./CountryPicker.module.css";
 
 const CountryPicker = ({ handleCountryChange }) => {
   const [fetchedCountries, setFetchedCountries] = useState([]);
@@ -13,10 +14,10 @@ const CountryPicker = ({ handleCountryChange }) => {
   }, [setFetchedCountries]);
 
   return (
-    <div>
+    <div className={styles.container}>
       <Form>
         <Label>
-          Pilih Negara:
+          <h2>Pilih Negara:</h2>
           <select onChange={(e) => handleCountryChange(e.target.value)}>
             <option value="global" disabled>
               Select Country
