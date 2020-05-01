@@ -1,12 +1,11 @@
 import React from "react";
-import { Card, CardTitle, CardText, Row, Col } from "reactstrap";
+import { Card, CardTitle, Row, Col } from "reactstrap";
 import styles from "./Cards.module.css";
 
 const Cards = ({ data: { confirmed, recovered, deaths }, country }) => {
   if (!confirmed) {
     return "";
   }
-  console.log(country);
 
   return (
     <div className={styles.container}>
@@ -23,9 +22,7 @@ const Cards = ({ data: { confirmed, recovered, deaths }, country }) => {
             <CardTitle>
               <h5>Positif</h5>
             </CardTitle>
-            <CardText>
-              <h5>{confirmed.value}</h5>
-            </CardText>
+            <h5>{confirmed.value}</h5>
           </Card>
         </Col>
         <Col xs="12" md="4">
@@ -39,9 +36,7 @@ const Cards = ({ data: { confirmed, recovered, deaths }, country }) => {
             <CardTitle>
               <h5>Meninggal</h5>
             </CardTitle>
-            <CardText>
-              <h5>{deaths.value}</h5>
-            </CardText>
+            <h5>{deaths.value}</h5>
           </Card>
         </Col>
         <Col xs="12" md="4">
@@ -55,9 +50,7 @@ const Cards = ({ data: { confirmed, recovered, deaths }, country }) => {
             <CardTitle>
               <h5>Sembuh</h5>
             </CardTitle>
-            <CardText>
-              <h5>{recovered.value}</h5>
-            </CardText>
+            <h5>{recovered.value}</h5>
           </Card>
         </Col>
       </Row>
