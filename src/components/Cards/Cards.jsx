@@ -13,7 +13,7 @@ const Cards = ({ data: { confirmed, recovered, deaths }, country }) => {
       <br />
       <h2>{country ? `Negara: ${country}` : `Global`}</h2>
       <Row>
-        <Col sm="4">
+        <Col xs="12" md="4">
           <Card
             body
             className="text-center"
@@ -28,7 +28,7 @@ const Cards = ({ data: { confirmed, recovered, deaths }, country }) => {
             </CardText>
           </Card>
         </Col>
-        <Col sm="4">
+        <Col xs="12" md="4">
           <Card
             body
             className="text-center"
@@ -44,7 +44,7 @@ const Cards = ({ data: { confirmed, recovered, deaths }, country }) => {
             </CardText>
           </Card>
         </Col>
-        <Col sm="4">
+        <Col xs="12" md="4">
           <Card
             body
             className="text-center"

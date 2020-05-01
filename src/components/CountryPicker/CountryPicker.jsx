@@ -17,7 +17,7 @@ const CountryPicker = ({ handleCountryChange }) => {
     <div className={styles.container}>
       <Form>
         <Label>
-          <h5 style={{ display: "inline" }}>Pilih Negara:</h5>
+          <h5 style={{ display: "inline" }}>Pilih Negara: </h5>
           <select onChange={(e) => handleCountryChange(e.target.value)}>
             <option value="global" disabled>
               Select Country
