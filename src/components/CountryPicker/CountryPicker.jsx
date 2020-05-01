@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { fetchCountries } from "../../api";
-import { Form, Label } from "reactstrap";
 import styles from "./CountryPicker.module.css";
 
 const CountryPicker = ({ handleCountryChange }) => {
@@ -15,21 +14,19 @@ const CountryPicker = ({ handleCountryChange }) => {
 
   return (
     <div className={styles.container}>
-      <Form>
-        <Label>
-          <h5 style={{ display: "inline" }}>Pilih Negara: </h5>
-          <select onChange={(e) => handleCountryChange(e.target.value)}>
-            <option value="global" disabled>
-              Select Country
+      <form>
+        <h5 style={{ display: "inline" }}>Pilih Negara: </h5>
+        <select onChange={(e) => handleCountryChange(e.target.value)}>
+          <option value="global" disabled>
+            Select Country
+          </option>
+          {fetchedCountries.map((country, i) => (
+            <option key={i} value={country}>
+              {country}
             </option>
-            {fetchedCountries.map((country, i) => (
-              <option key={i} value={country}>
-                {country}
-              </option>
-            ))}
-          </select>
-        </Label>
-      </Form>
+          ))}
+        </select>
+      </form>
     </div>
   );
 };
