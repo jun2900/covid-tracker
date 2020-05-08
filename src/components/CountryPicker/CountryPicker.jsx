@@ -17,9 +17,7 @@ const CountryPicker = ({ handleCountryChange }) => {
       <form>
         <h5 style={{ display: "inline" }}>Pilih Negara: </h5>
         <select onChange={(e) => handleCountryChange(e.target.value)}>
-          <option value="global" disabled>
-            Select Country
-          </option>
+          <option value="">Global</option>
           {fetchedCountries.map((country, i) => (
             <option key={i} value={country}>
               {country}
