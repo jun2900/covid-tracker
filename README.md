@@ -11,3 +11,7 @@ Web that track Covid 19 cases globally and per country
 Below is the main page of the web
 
 ![Example of CovidTracker main page](./covidTracker.png)
+
+Below is the example if one country if chosen from the combo box
+![CovidTracker example](./comboBoxExample.png)
+![Barchart example](./barChart.png)
