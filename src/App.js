@@ -1,7 +1,7 @@
 import React from 'react'
 import { Cards, CountryPicker, Chart } from './components'
 import styles from './App.module.css'
-import { fetchData } from './api'
+import { fetchData, fetchFirstCountry } from './api'
 
 class App extends React.Component {
     state = {
@@ -19,6 +19,9 @@ class App extends React.Component {
         this.setState({ data: fetchedData })
 
         //Will display the first country when its deploy
+        const firstCountry = await fetchFirstCountry();
+        const fetchedFirstCountry = await fetchData(firstCountry)
+        this.setState({ dataCountry: fetchedFirstCountry, country: firstCountry })
     }
 
     handleCountryChange = async (country) => {

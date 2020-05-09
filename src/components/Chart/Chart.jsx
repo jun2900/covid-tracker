@@ -16,7 +16,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     };
 
     fetchMyAPI();
-  }, []);
+  }, [setDailyData]);
 
   const barChart = confirmed ? (
     <Bar
@@ -57,11 +57,17 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
           },
         ],
       }}
+      options={{
+        title: { display: true, text: `Data harian global` },
+      }}
     />
   ) : null;
 
   return (
-    <div className={styles.container}>{country ? barChart : lineChart}</div>
+    <div className={styles.container}>
+      <center>{barChart}</center>
+      <center>{lineChart}</center>
+    </div>
   );
 };
 
